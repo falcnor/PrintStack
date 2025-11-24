@@ -1,0 +1,20 @@
+# Claude/Speckit folders
+.claude/
+.speckit/
+speckit/
+.specify/
+specify/
+.specs/
+specs/
+
+# Alternative patterns if needed
+**/.claude/
+**/.speckit/
+**/speckit/
+**/.specify/
+**/specify/
+**/.specs/
+**/specs/
+
+# Files
+CLAUDE.MD
