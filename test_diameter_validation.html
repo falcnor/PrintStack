@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diameter Validation Test</title>
+</head>
+<body>
+    <h1>Diameter Validation Debug Test</h1>
+
+    <form id="testForm">
+        <label for="diameter">Diameter:</label>
+        <select id="diameter" name="diameter" required>
+            <option value="1.75">1.75mm</option>
+            <option value="2.85">2.85mm</option>
+        </select>
+        <button type="button" onclick="testValidation()">Test Validation</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        // Copy the validation functions from the main code
+        const ValidationRules = {
+            diameter: {
+                required: true,
+                type: 'number',
+                allowed: [1.75, 2.85],
+                message: 'Diameter must be 1.75mm or 2.85mm'
+            }
+        };
+
+        function validateFieldType(value, rule, fieldName) {
+            if (rule.type === 'number' && value !== '') {
+                const num = parseFloat(value);
+                if (fieldName === 'diameter') {
+                    console.log('DEBUG diameter type conversion:', {
+                        originalValue: value,
+                        originalType: typeof value,
+                        convertedNum: num,
+                        isNaN: isNaN(num)
+                    });
+                }
+                if (isNaN(num)) {
+                    return {
+                        valid: false,
+                        message: `${fieldName} must be a number`
+                    };
+                }
+                return num;
+            }
+            return value;
+        }
+
+        function validateFieldAllowed(value, rule, fieldName) {
+            if (fieldName === 'diameter') {
+                console.log('DEBUG diameter validation:', {
+                    value,
+                    valueType: typeof value,
+                    allowed: rule.allowed,
+                    allowedType: typeof rule.allowed,
+                    includesCheck: rule.allowed.includes(value)
+                });
+            }
+            if (rule.allowed && !rule.allowed.includes(value)) {
+                return {
+                    valid: false,
+                    message: rule.message || `${fieldName} must be one of: ${rule.allowed.join(', ')}`
+                };
+            }
+            return { valid: true };
+        }
+
+        function validateField(fieldName, value) {
+            const rule = ValidationRules[fieldName];
+            if (!rule) return { valid: true };
+
+            // Type validation
+            value = validateFieldType(value, rule, fieldName);
+            if (typeof value === 'object' && !value.valid) {
+                return value;
+            }
+
+            // Allowed values validation
+            const allowedResult = validateFieldAllowed(value, rule, fieldName);
+            if (!allowedResult.valid) {
+                return allowedResult;
+            }
+
+            return { valid: true };
+        }
+
+        function testValidation() {
+            const form = document.getElementById('testForm');
+            const diameterValue = form.diameter.value;
+
+            console.log('=== Testing Diameter Validation ===');
+            console.log('Form value:', diameterValue, 'Type:', typeof diameterValue);
+
+            const result = validateField('diameter', diameterValue);
+
+            const output = document.getElementById('output');
+            output.innerHTML = `
+                <h3>Validation Result:</h3>
+                <pre>${JSON.stringify(result, null, 2)}</pre>
+                <h3>Console:</h3>
+                <p>Check browser console for debug information</p>
+            `;
+        }
+    </script>
+</body>
+</html>
