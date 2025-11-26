@@ -3774,10 +3774,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Add noscript fallbacks programmatically (these will be visible if JS is disabled)
-    if (document.querySelector('noscript')) {
-        addNoScriptFallbacks();
-    }
+    // NoScript warnings are handled by HTML <noscript> tags - no need for duplicate warnings
 
     // Initialize collapsible sections
     // "Add New Model" section should be collapsed by default
