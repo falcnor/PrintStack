@@ -810,7 +810,7 @@ function createPrintFilamentSearchBox(selectedId = null, selectedWeight = null) 
         <select class="print-filament-select" style="min-width: 300px;" onchange="updateTotalWeight()">
             ${filamentOptions}
         </select>
-        <input type="number" class="print-filament-weight" placeholder="Weight Used (g)" min="0" step="0.1" value="${weightDisplay}" style="width: 120px; margin-left: 10px;" onchange="updateTotalWeight()" oninput="updateTotalWeight()">
+        <input type="number" class="print-filament-weight" placeholder="Weight Used (g)" min="0" step="0.1" value="${weightDisplay}" style="width: 120px; margin-left: 10px;" onchange="updateTotalWeight()" oninput="updateTotalWeight()" title="Actual weight of filament used in grams" title="Actual weight of filament used in grams">
         <button class="remove-btn" onclick="removePrintFilament(this)" title="Remove filament">✕</button>
     `;
 
@@ -2380,13 +2380,13 @@ function createFilamentSearchBox(selectedId = null, isEdit = false) {
 
     div.innerHTML = `
         <div class="search-container">
-            <input type="text" class="search-input req-search" placeholder="Search filaments..." value="${displayText}" data-selected-id="${selectedId || ''}" autocomplete="off">
+            <input type="text" class="search-input req-search" placeholder="Search filaments..." value="${displayText}" data-selected-id="${selectedId || ''}" autocomplete="off" title="Search for filaments by name, color, or material type">
             <div class="search-results"></div>
         </div>
         <div class="usage-fields">
-            <input type="number" class="expected-weight" placeholder="Expected weight (g)" min="0" step="0.1" value="${reqData?.expectedWeight || ''}" aria-label="Expected filament weight in grams">
-            <input type="number" class="tolerance" placeholder="Tolerance %" min="0" max="100" step="1" value="${reqData?.tolerance || ''}" aria-label="Usage tolerance percentage">
-            <input type="number" class="required-count" placeholder="Qty" min="1" value="${reqData?.requiredCount || 1}" aria-label="Number of items required">
+            <input type="number" class="expected-weight" placeholder="Expected weight (g)" min="0" step="0.1" value="${reqData?.expectedWeight || ''}" aria-label="Expected filament weight in grams" title="Expected filament weight in grams for this model">
+            <input type="number" class="tolerance" placeholder="Tolerance %" min="0" max="100" step="1" value="${reqData?.tolerance || ''}" aria-label="Usage tolerance percentage" title="Tolerance percentage for weight variance (e.g., 5 for ±5%)">
+            <input type="number" class="required-count" placeholder="Qty" min="1" value="${reqData?.requiredCount || 1}" aria-label="Number of items required" title="Number of times this filament is needed for the model">
         </div>
         <button type="button" class="delete-btn" onclick="${removeFn}(this)">Remove</button>
     `;
@@ -3521,6 +3521,7 @@ function applyFeatureFallbacks(features) {
             textInput.pattern = '^#[0-9A-Fa-f]{6}$';
             textInput.id = input.id;
             textInput.name = input.name;
+            textInput.title = 'Hex color code (e.g., #FF5733)';
 
             // Copy event listeners and attributes
             Array.from(input.attributes).forEach(attr => {
@@ -3571,13 +3572,13 @@ function addNoScriptFallbacks() {
             <h3>Basic Filament Entry (Limited Functionality)</h3>
             <p>This form allows basic data entry but lacks advanced features like validation, storage, and calculations.</p>
             <div style="margin-bottom: 10px;">
-                <label>Material: <input type="text" name="material" required></label>
+                <label>Material: <input type="text" name="material" required title="Enter filament material type (e.g., PLA, PETG)"></label>
             </div>
             <div style="margin-bottom: 10px;">
-                <label>Color: <input type="text" name="color" required></label>
+                <label>Color: <input type="text" name="color" required title="Enter filament color description"></label>
             </div>
             <div style="margin-bottom: 10px;">
-                <label>Weight (g): <input type="number" name="weight" required></label>
+                <label>Weight (g): <input type="number" name="weight" required title="Enter filament weight in grams"></label>
             </div>
             <button type="submit">Add Filament</button>
         </form>
@@ -3910,6 +3911,7 @@ function editCategory(oldName) {
     input.type = 'text';
     input.value = currentName;
     input.className = 'category-edit-input';
+    input.title = 'Enter category name';
 
     const saveBtn = document.createElement('button');
     saveBtn.textContent = 'Save';
