@@ -19,6 +19,16 @@ specs/
 # Files
 CLAUDE.MD
 
+# Development and testing files (keep core app, exclude dev tools)
+*_test.html
+*_audit.html
+*_compliance.html
+deploy/
+performance_test.html
+cross_browser_test.html
+accessibility_audit.html
+constitution_compliance.html
+
 # JavaScript/Web development patterns for PrintStack SPA
 .DS_Store
 Thumbs.db
