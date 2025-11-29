@@ -1,0 +1,479 @@
+/* ModelForm Component Styles */
+.modelForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+.formSection {
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 1.5rem;
+}
+
+.formSection:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.formSection h3 {
+  margin: 0 0 1rem 0;
+  color: #2c3e50;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Form Layout */
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  padding: 0.75rem;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+  background: white;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+/* Number Input Styling */
+.formGroup input[type="number"] {
+  appearance: textfield;
+}
+
+.formGroup input[type="number"]::-webkit-outer-spin-button,
+.formGroup input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Checkbox Styling */
+.checkboxGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.checkboxGroup input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkboxGroup label {
+  cursor: pointer;
+  margin: 0;
+  font-weight: normal;
+}
+
+/* Model Selection */
+.modelSelect {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.modelInfo {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-left: 4px solid #3498db;
+}
+
+.modelInfo h4 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.modelDetails p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+/* Requirements Section */
+.requirementsSection {
+  margin-top: 1rem;
+}
+
+.requirementsHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.totalCount,
+.totalWeight {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.totalWeight {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Filament Requirement Fields */
+.requirement {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.requirementHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.requirementNumber {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+.removeButton {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  transition: background-color 0.2s ease;
+}
+
+.removeButton:hover {
+  background: #c0392b;
+}
+
+.requirementFields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.requirementFields .fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.requirementFields .fieldGroup label {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.requirementFields .select,
+.requirementFields .input {
+  padding: 0.5rem;
+  border: 2px solid #e9ecef;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background: white;
+}
+
+.requirementFields .select:focus,
+.requirementFields .input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.requirementFields .select.outOfStock {
+  border-color: #e74c3c;
+  background: #fdf2f2;
+}
+
+/* Filament Details */
+.filamentDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #ecf0f1;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 100px;
+}
+
+.detailLabel {
+  font-size: 0.75rem;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detailValue {
+  font-size: 0.85rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.colorDisplay {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.colorSwatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+/* Empty State */
+.emptyState {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #bdc3c7;
+}
+
+.emptyState p {
+  margin: 0 0 1rem 0;
+  color: #7f8c8d;
+}
+
+.autoPopulateButton {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.autoPopulateButton:hover {
+  background: #219a52;
+}
+
+/* Add Button */
+.addButton {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  margin-top: 1rem;
+}
+
+.addButton:hover {
+  background: #2980b9;
+}
+
+/* Summary */
+.summary {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid #e9ecef;
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summaryLabel {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.summaryValue {
+  font-weight: 700;
+  color: #3498db;
+}
+
+/* Validation */
+.validationHelper {
+  margin-top: 1rem;
+}
+
+.validationErrors {
+  background: #fdf2f2;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.validationErrors .error {
+  color: #721c24;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.validationErrors .error:last-child {
+  margin-bottom: 0;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  border-top: 1px solid #ecf0f1;
+}
+
+.cancelButton {
+  background: #95a5a6;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.cancelButton:hover {
+  background: #7f8c8d;
+}
+
+.submitButton {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.submitButton:hover {
+  background: #219a52;
+}
+
+/* Out of Stock Warning */
+.outOfStockWarning {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #856404;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .requirementFields {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .cancelButton,
+  .submitButton {
+    width: 100%;
+    order: 2;
+  }
+
+  .cancelButton {
+    order: 1;
+  }
+
+  .modal {
+    margin: 1rem;
+    max-height: calc(100vh - 2rem);
+  }
+
+  .requirementsHeader {
+    align-items: flex-start;
+  }
+
+  .filamentDetails {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modelForm {
+    gap: 1rem;
+  }
+
+  .formSection {
+    padding-bottom: 1rem;
+  }
+
+  .requirement {
+    padding: 0.75rem;
+  }
+
+  .requirementHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

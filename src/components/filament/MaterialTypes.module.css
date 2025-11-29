@@ -1,0 +1,293 @@
+.materialManager {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.materialManager h3 {
+  margin: 0 0 var(--spacing-lg);
+  color: var(--text-color);
+  font-size: var(--font-size-2xl);
+}
+
+.materialsList {
+  margin-bottom: var(--spacing-xl);
+}
+
+.section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.section h4 {
+  margin: 0 0 var(--spacing-md);
+  color: var(--text-color);
+  font-size: var(--font-size-lg);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: var(--spacing-xs);
+}
+
+.materialGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.materialCard {
+  background: var(--surface-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-hover);
+  transition: all var(--transition-fast);
+}
+
+.materialCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.customHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.customHeader h5 {
+  margin: 0;
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+}
+
+.deleteButton {
+  background: var(--error-color);
+  color: white;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.deleteButton:hover {
+  background: var(--error-hover);
+  transform: scale(1.1);
+}
+
+.materialCard h5 {
+  margin: 0 0 var(--spacing-xs);
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+.materialCard p {
+  margin: 0 0 var(--spacing-xs);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+.temp {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  font-weight: var(--font-weight-medium);
+  background: var(--background-color);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
+.addSection {
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+}
+
+.addButton {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+}
+
+.addButton:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.addForm {
+  background: var(--surface-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--border-hover);
+}
+
+.addForm h4 {
+  margin: 0 0 var(--spacing-md);
+  color: var(--text-color);
+  font-size: var(--font-size-lg);
+}
+
+.formRow {
+  margin-bottom: var(--spacing-md);
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  background: white;
+  color: var(--text-color);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.formActions {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+}
+
+.cancelButton {
+  background: var(--secondary-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+}
+
+.cancelButton:hover {
+  background: var(--secondary-hover);
+}
+
+.saveButton {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.saveButton:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.saveButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Info display mode */
+.materialInfo {
+  background: var(--surface-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  border-left: 4px solid var(--primary-color);
+  margin-top: var(--spacing-sm);
+}
+
+.materialInfo h4 {
+  margin: 0 0 var(--spacing-xs);
+  color: var(--text-color);
+  font-size: var(--font-size-lg);
+}
+
+.description {
+  margin: 0 0 var(--spacing-sm);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-style: italic;
+}
+
+.details {
+  display: flex;
+  gap: var(--spacing-lg);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.detail strong {
+  color: var(--text-color);
+}
+
+/* Selector mode */
+.materialSelector {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.select {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  background: white;
+  color: var(--text-color);
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.inlineInfo {
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .materialManager,
+  .addForm {
+    padding: var(--spacing-md);
+  }
+
+  .materialGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formActions {
+    flex-direction: column;
+  }
+
+  .cancelButton,
+  .saveButton {
+    width: 100%;
+  }
+
+  .details {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+}

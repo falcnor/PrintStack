@@ -1,0 +1,442 @@
+.tableContainer {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.tableInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.itemCount {
+  font-weight: var(--font-weight-medium);
+}
+
+.virtualizationNotice {
+  color: var(--accent-color);
+  font-weight: var(--font-weight-medium);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  font-size: var(--font-size-sm);
+}
+
+.skeletonTable {
+  width: 100%;
+  background: var(--surface-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.loadingContainer {
+  width: 100%;
+}
+
+.skeletonHeader,
+.skeletonRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+}
+
+.skeletonHeader {
+  background: var(--secondary-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.skeletonRow {
+  border-bottom: 1px solid var(--border-hover);
+}
+
+.skeletonCell {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: var(--radius-sm);
+  height: 20px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+thead {
+  background-color: var(--surface-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+th {
+  padding: var(--spacing-md);
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-color);
+  position: sticky;
+  top: 0;
+  background-color: var(--surface-color);
+  z-index: 10;
+}
+
+.sortableHeader {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--transition-fast);
+}
+
+.sortableHeader:hover {
+  background-color: var(--secondary-hover);
+}
+
+.sortableHeader:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: -2px;
+}
+
+td {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.row {
+  transition: background-color var(--transition-fast);
+}
+
+.row:hover {
+  background-color: var(--surface-color);
+}
+
+.row:last-child td {
+  border-bottom: none;
+}
+
+.nameCell {
+  font-weight: var(--font-weight-medium);
+}
+
+.filamentName {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.colorSwatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.remainingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.remainingWeight {
+  font-weight: var(--font-weight-medium);
+}
+
+.percentage {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.costContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.costPerGram {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-xs);
+  justify-content: center;
+}
+
+.editButton,
+.deleteButton {
+  background: none;
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.editButton:hover,
+.editButton:focus {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.deleteButton:hover,
+.deleteButton:focus {
+  background-color: var(--error-color);
+  border-color: var(--error-color);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.editButton:focus,
+.deleteButton:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .table {
+    font-size: var(--font-size-xs);
+  }
+
+  th,
+  td {
+    padding: var(--spacing-sm);
+  }
+
+  .colorSwatch {
+    width: 16px;
+    height: 16px;
+  }
+
+  .editButton,
+  .deleteButton {
+    width: 28px;
+    height: 28px;
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  .tableContainer {
+    border-radius: var(--radius-md);
+  }
+
+  th,
+  td {
+    padding: var(--spacing-xs);
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .editButton,
+  .deleteButton {
+    width: 100%;
+    height: auto;
+    padding: var(--spacing-xs);
+  }
+
+  .remainingContainer,
+  .costContainer {
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: var(--surface-color);
+  border-top: 1px solid var(--border-color);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.paginationInfo {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.paginationControls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.paginationButton {
+  background: white;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-xs);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.paginationButton:hover:not(:disabled) {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.paginationButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--secondary-color);
+  color: var(--text-muted);
+}
+
+.paginationButton:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.pageNumbers {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.pageNumber {
+  background: white;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  min-width: 32px;
+  transition: all var(--transition-fast);
+}
+
+.pageNumber:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.pageNumber:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.activePage {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* Performance Notice */
+.performanceNotice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: var(--primary-light);
+  border-top: 1px solid var(--primary-color);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  color: var(--primary-color);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.loadMoreButton {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-xs);
+  transition: all var(--transition-fast);
+}
+
+.loadMoreButton:hover {
+  background: var(--primary-hover);
+}
+
+@media (max-width: 480px) {
+  .skeletonHeader,
+  .skeletonRow {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .skeletonCell:nth-child(n+4) {
+    display: none;
+  }
+
+  th:nth-child(n+4),
+  td:nth-child(n+4) {
+    display: none;
+  }
+
+  .table {
+    font-size: 10px;
+  }
+
+  th,
+  td {
+    padding: 4px 6px;
+  }
+
+  /* Responsive pagination */
+  .pagination {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .paginationControls {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .paginationButton {
+    font-size: 10px;
+    padding: 4px 6px;
+    min-width: auto;
+  }
+
+  .pageNumber {
+    padding: 4px 6px;
+    min-width: 28px;
+    font-size: 10px;
+  }
+
+  .performanceNotice {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    text-align: center;
+  }
+}

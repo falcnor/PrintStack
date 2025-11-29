@@ -1,0 +1,687 @@
+/* PrintForm Component Styles */
+.printForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Form Sections */
+.section {
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 1.5rem;
+}
+
+.section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.section h3 {
+  margin: 0 0 1rem 0;
+  color: #2c3e50;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section h3::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 1.2em;
+  background: #3498db;
+  border-radius: 2px;
+}
+
+/* Form Layout */
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.formGroup label .required {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  padding: 0.75rem;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.formGroup input[type="number"] {
+  appearance: textfield;
+}
+
+.formGroup input[type="number"]::-webkit-outer-spin-button,
+.formGroup input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Model Selection */
+.modelSelect {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Model Information */
+.modelInfo {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-left: 4px solid #3498db;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.modelInfo h4 {
+  margin: 0 0 0.75rem 0;
+  color: #2c3e50;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.modelDetails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.modelDetails p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modelDetails strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.modelDetails p::before {
+  content: '•';
+  color: #3498db;
+  font-weight: bold;
+}
+
+/* Quality Rating Options */
+.qualityGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+/* Filament Usages Section */
+.filamentUsages {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filamentUsage {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.filamentUsage:hover {
+  border-color: #dce1e4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.noFilaments {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #bdc3c7;
+}
+
+.noFilaments p {
+  margin: 0 0 1rem 0;
+  color: #7f8c8d;
+  font-size: 1rem;
+}
+
+.autoPopulateButton {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.autoPopulateButton:hover {
+  background: #219a52;
+}
+
+.autoPopulateButton::before {
+  content: '🔄';
+  font-size: 1rem;
+}
+
+/* Filament Info */
+.filamentInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid #ecf0f1;
+  margin-top: 1rem;
+}
+
+.filamentDetails {
+  color: #2c3e50;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.remainingWeight {
+  color: #27ae60;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #e8f8f5;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+}
+
+/* Add Button */
+.addButton {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+}
+
+.addButton::before {
+  content: '+';
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.addButton:hover {
+  background: #2980b9;
+  transform: translateY(-1px);
+}
+
+/* Total Weight Display */
+.totalWeight {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.totalWeight strong {
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.totalWeight span {
+  color: #3498db;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* Errors */
+.errors {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.errors .error {
+  color: #721c24;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.error:not(:last-child) {
+  border-bottom: 1px solid #f5c6cb;
+}
+
+.error::before {
+  content: '⚠️';
+  font-size: 0.9rem;
+}
+
+/* Remove Button for Filament Usage */
+.removeButton {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.removeButton:hover {
+  background: #c0392b;
+}
+
+/* Disabled Options */
+.disabled {
+  background: #ecf0f1 !important;
+  color: #7f8c8d !important;
+  cursor: not-allowed !important;
+}
+
+/* Form Actions */
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-top: 2rem;
+  border-top: 1px solid #ecf0f1;
+  margin-top: 2rem;
+}
+
+.cancelButton,
+.submitButton {
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.cancelButton {
+  background: #95a5a6;
+  color: white;
+}
+
+.cancelButton:hover {
+  background: #7f8c8d;
+}
+
+.submitButton {
+  background: #27ae60;
+  color: white;
+}
+
+.submitButton:hover {
+  background: #219a52;
+  transform: translateY(-1px);
+}
+
+/* Loading State */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid #e9ecef;
+  border-radius: 50%;
+  border-top-color: #3498db;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .printForm {
+    gap: 1rem;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .section {
+    padding-bottom: 1rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+
+  .cancelButton,
+  .submitButton {
+    width: 100%;
+    order: 2;
+  }
+
+  .cancelButton {
+    order: 1;
+  }
+
+  .modelDetails {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .modelDetails p {
+    font-size: 0.85rem;
+  }
+
+  .filamentUsage {
+    padding: 1rem;
+  }
+
+  .filamentInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .totalWeight {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .printForm {
+    padding: 0.5rem;
+  }
+
+  .section {
+    padding-bottom: 0.75rem;
+  }
+
+  .section h3 {
+    font-size: 1.1rem;
+  }
+
+  .formGroup label {
+    font-size: 0.85rem;
+  }
+
+  .formGroup input,
+  .formGroup select,
+  .formGroup textarea {
+    padding: 0.625rem;
+    font-size: 0.9rem;
+  }
+
+  .modelInfo {
+    padding: 0.75rem;
+  }
+
+  .modelInfo h4 {
+    font-size: 0.9rem;
+  }
+
+  .modelDetails p {
+    font-size: 0.8rem;
+  }
+
+  .error {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .actions {
+    gap: 0.75rem;
+  }
+
+  .cancelButton,
+  .submitButton {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .modelInfo {
+    animation: none;
+  }
+
+  .filamentUsage {
+    transition: none;
+  }
+
+  .addButton {
+    transition: none;
+    transform: none;
+  }
+
+  .addButton:hover {
+    transform: none;
+  }
+
+  .submitButton {
+    transition: none;
+    transform: none;
+  }
+
+  .submitButton:hover {
+    transform: none;
+  }
+
+  .loading::after {
+    animation: none;
+  }
+}
+
+/* Print Mode */
+@media print {
+  .printForm {
+    max-width: none;
+  }
+
+  .actions {
+    display: none;
+  }
+
+  .errors {
+    display: none;
+  }
+
+  .removeButton {
+    display: none;
+  }
+
+  .autoPopulateButton {
+    display: none;
+  }
+
+  .section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .filamentUsage {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .printForm {
+    color: #ecf0f1;
+  }
+
+  .section {
+    border-color: #34495e;
+  }
+
+  .section h3 {
+    color: #ecf0f1;
+  }
+
+  .formGroup label {
+    color: #ecf0f1;
+  }
+
+  .formGroup input,
+  .formGroup select,
+  .formGroup textarea {
+    background: #34495e;
+    border-color: #445566;
+    color: #ecf0f1;
+  }
+
+  .formGroup input:focus,
+  .formGroup select:focus,
+  .formGroup textarea:focus {
+    border-color: #3498db;
+  }
+
+  .modelInfo {
+    background: #34495e;
+    border-left-color: #3498db;
+  }
+
+  .modelInfo h4 {
+    color: #ecf0f1;
+  }
+
+  .modelDetails p {
+    color: #bdc3c7;
+  }
+
+  .modelDetails strong {
+    color: #ecf0f1;
+  }
+
+  .filamentUsage {
+    background: #34495e;
+    border-color: #445566;
+  }
+
+  .noFilaments {
+    background: #34495e;
+    border-color: #445566;
+  }
+
+  .noFilaments p {
+    color: #bdc3c7;
+  }
+
+  .totalWeight {
+    background: #34495e;
+    border-color: #445566;
+  }
+
+  .totalWeight strong {
+    color: #ecf0f1;
+  }
+
+  .actions {
+    border-color: #34495e;
+  }
+
+  .errors {
+    background: #721c24;
+    border-color: #8b3a1b;
+  }
+
+  .error {
+    color: #f8d7da;
+  }
+
+  .error:not(:last-child) {
+    border-color: #8b3a1b;
+  }
+}

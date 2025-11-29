@@ -1,0 +1,185 @@
+/* CSS Variables for PrintStack Application */
+
+:root {
+  /* Light Theme Colors */
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #dbeafe;
+
+  --secondary-color: #f8fafc;
+  --secondary-hover: #f1f5f9;
+
+  --accent-color: #10b981;
+  --accent-hover: #059669;
+
+  --background-color: #ffffff;
+  --surface-color: #f8fafc;
+
+  --text-color: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+
+  --border-color: #e2e8f0;
+  --border-hover: #cbd5e1;
+
+  --error-color: #dc2626;
+  --error-background: #fef2f2;
+  --error-border: #fecaca;
+
+  --warning-color: #d97706;
+  --warning-background: #fffbeb;
+  --warning-border: #fed7aa;
+
+  --success-color: #16a34a;
+  --success-background: #f0fdf4;
+  --success-border: #bbf7d0;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Typography */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+
+  /* Z-index scale */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --primary-color: #3b82f6;
+  --primary-hover: #60a5fa;
+  --primary-light: #1e3a8a;
+
+  --secondary-color: #1e293b;
+  --secondary-hover: #334155;
+
+  --accent-color: #10b981;
+  --accent-hover: #34d399;
+
+  --background-color: #0f172a;
+  --surface-color: #1e293b;
+
+  --text-color: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --border-color: #334155;
+  --border-hover: #475569;
+
+  --error-color: #ef4444;
+  --error-background: #450a0a;
+  --error-border: #7f1d1d;
+
+  --warning-color: #f59e0b;
+  --warning-background: #451a03;
+  --warning-border: #78350f;
+
+  --success-color: #22c55e;
+  --success-background: #052e16;
+  --success-border: #15803d;
+}
+
+/* High Contrast Theme */
+[data-theme="high-contrast"] {
+  --primary-color: #0000ff;
+  --primary-hover: #0000cc;
+  --primary-light: #cce5ff;
+
+  --secondary-color: #ffffff;
+  --secondary-hover: #f0f0f0;
+
+  --accent-color: #008000;
+  --accent-hover: #006600;
+
+  --background-color: #ffffff;
+  --surface-color: #ffffff;
+
+  --text-color: #000000;
+  --text-secondary: #000000;
+  --text-muted: #333333;
+
+  --border-color: #000000;
+  --border-hover: #000000;
+
+  --error-color: #ff0000;
+  --error-background: #fff0f0;
+  --error-border: #ff0000;
+
+  --warning-color: #ff8c00;
+  --warning-background: #fff8dc;
+  --warning-border: #ff8c00;
+
+  --success-color: #008000;
+  --success-background: #f0fff0;
+  --success-border: #008000;
+}
+
+/* System preference for dark mode */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --primary-color: #3b82f6;
+    --primary-hover: #60a5fa;
+    --primary-light: #1e3a8a;
+
+    --secondary-color: #1e293b;
+    --secondary-hover: #334155;
+
+    --accent-color: #10b981;
+    --accent-hover: #34d399;
+
+    --background-color: #0f172a;
+    --surface-color: #1e293b;
+
+    --text-color: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+
+    --border-color: #334155;
+    --border-hover: #475569;
+  }
+}

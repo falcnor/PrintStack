@@ -2,6 +2,7 @@
 
 A comprehensive 3D printing inventory management system to track filaments, models, and print history. Built with vanilla HTML, CSS, and JavaScript.
 
+![Logo](images/printstack_logo.png)
 ![PrintStack Interface](screenshot.png)
 
 ## Features
